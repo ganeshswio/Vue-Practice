@@ -46,6 +46,8 @@
  </div>
 
  <!-- dynamic CSS -->
+
+
  <div class="">
    <h3>dynamic css  </h3>
    
@@ -56,11 +58,39 @@
 <h2>example2</h2>
  <button v-on:click="nearby=!nearby">Toggle nearby</button>
      <button v-on:click="available=!available">Toggle available</button>
-   <div  v-bind:class="{compClasses}">
+   <div v-bind:class="{compClasses}">
     
    <span>ryu</span>
    </div>
  </div>
+
+
+
+ <!-- if & show -->
+   <button v-on:click="error=!error">Error</button>
+   <button v-on:click="success=!success">Sucess</button>
+   <p v-if="error">there has been an error</p>
+   <p v-else-if="success">Whooo , success</p>
+
+ <p v-show="error">there has been an error</p>
+   <p v-show="success">Whooo , success</p>
+
+<!-- v-for -->
+
+<div class="">
+  <ul>
+ 
+  <!-- <li v-for="(member)(index) in  members">{{index}} . {{member.name}}</li> -->
+</ul>
+</div>
+
+<!-- refs -->
+
+<div class="">
+  <input type="text" ref="input">
+     <button v-on:click="readRefs">Submit</button>
+  
+</div>
 
   </div>
  
@@ -80,8 +110,16 @@ export default {
      name:"ganesh",
      a :0,
      b :0,
+     value: 90,
      available:false,
-     nearby:false
+     nearby:false,
+     error:false,
+     success:false,
+
+     member :[
+       {"name":"rajesh"},
+       {"name":"vamshi"}
+     ]
      
    }
    },
@@ -111,6 +149,9 @@ export default {
    addToB(){
      console.log('add to B')
       return this.b+this.age
+   },
+   readRefs(){
+     console.log(this.$refs);
    }
  
  },
@@ -124,14 +165,17 @@ export default {
 // //       return this.b+this.age
 // //    }
 //  }
-// computed:{
-//   compClasses(){
-//     return{
-//       available:this.available,
-//       nearby: this.nearby
-//     }
-//   },
-// }
+computed:{
+  compClasses(){
+    return{
+      available:this.available,
+      nearby: this.nearby
+    }
+  },
+  calculateTheValue(){
+    return ((this.value* 10)/5);
+  }
+}
 }
  
  
