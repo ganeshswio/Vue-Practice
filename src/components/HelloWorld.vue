@@ -89,6 +89,7 @@
 <div class="">
   <input type="text" ref="input">
      <button v-on:click="readRefs">Submit</button>
+     <p>ypur fav food: {{output}}</p>
   
 </div>
 
@@ -115,6 +116,7 @@ export default {
      nearby:false,
      error:false,
      success:false,
+     output:'your fav food',
 
      member :[
        {"name":"rajesh"},
@@ -151,7 +153,8 @@ export default {
       return this.b+this.age
    },
    readRefs(){
-     console.log(this.$refs);
+     console.log(this.$refs.input.value);
+     this.output = this.$refs.input.value;
    }
  
  },
