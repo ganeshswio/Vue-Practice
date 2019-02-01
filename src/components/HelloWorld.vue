@@ -11,6 +11,10 @@
 
 </div>
 
+<div>
+  <a v-on:click="click" href="https://google.com">hello this is me</a>
+</div>
+
 
   </div>
  
@@ -39,6 +43,9 @@ export default {
    },
    updateXY(){
      console.log(event);
+   },
+   click(){
+     alert('u clicked me');
    }
  
  },
