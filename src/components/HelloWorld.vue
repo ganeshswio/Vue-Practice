@@ -45,6 +45,23 @@
    
  </div>
 
+ <!-- dynamic CSS -->
+ <div class="">
+   <h3>dynamic css  </h3>
+   
+   <h1> example1 </h1>
+   <div  v-on:click="available=!available" v-bind:class="{available:available}">
+   <span>ryu</span>
+   </div>
+<h2>example2</h2>
+ <button v-on:click="nearby=!nearby">Toggle nearby</button>
+     <button v-on:click="available=!available">Toggle available</button>
+   <div  v-bind:class="{compClasses}">
+    
+   <span>ryu</span>
+   </div>
+ </div>
+
   </div>
  
   
@@ -63,6 +80,8 @@ export default {
      name:"ganesh",
      a :0,
      b :0,
+     available:false,
+     nearby:false
      
    }
    },
@@ -95,16 +114,24 @@ export default {
    }
  
  },
- computed:{
-    addToA(){
-     console.log('add to A')
-      return this.a+this.age
-   },
-   addToB(){
-     console.log('add to B')
-      return this.b+this.age
-   }
- }
+// //  computed:{
+// //     addToA(){
+// //      console.log('add to A')
+// //       return this.a+this.age
+// //    },
+// //    addToB(){
+// //      console.log('add to B')
+// //       return this.b+this.age
+// //    }
+//  }
+// computed:{
+//   compClasses(){
+//     return{
+//       available:this.available,
+//       nearby: this.nearby
+//     }
+//   },
+// }
 }
  
  
@@ -135,5 +162,19 @@ a {
 }
 .key{
   padding:20px 0 20px 0;
+}
+.available span{
+  background:green;
+}
+span{
+  background:red;
+  display: inline-block;
+  padding: 10px;
+  color:#fff;
+  margin:10px 0;
+}
+.nearby span:after{
+  content:"nearby";
+  margin-left:10px;
 }
 </style>
