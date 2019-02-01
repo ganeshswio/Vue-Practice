@@ -10,9 +10,19 @@
 <div class="canvas" v-on:mousemove="updateXY">{{x}},{{y}}
 
 </div>
+<!-- event modifiers -->
 
 <div>
   <a v-on:click="click" href="https://google.com">hello this is me</a>
+</div>
+
+<!-- keyboard events -->
+<div>
+  <h1>keyboard events</h1>
+  <label for="Name">Name</label>
+  <input type="text" v-on:keyup.enter="logName">
+  <label for="">age</label>
+  <input type="text" v-on:keyup.enter="logAge">
 </div>
 
 
@@ -46,6 +56,12 @@ export default {
    },
    click(){
      alert('u clicked me');
+   },
+   logName(){
+     console.log("you entered the name");
+   },
+   logAge(){
+       console.log("you entered the age");
    }
  
  },
