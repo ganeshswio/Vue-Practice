@@ -7,7 +7,7 @@
   <button v-on:click="sub(10)">sub 10 year </button>
    <h1>age: {{age}}</h1>
 
-<div class="canvas">
+<div class="canvas" v-on:mousemove="updateXY">{{x}},{{y}}
 
 </div>
 
@@ -24,7 +24,9 @@ export default {
  data(){
    return{
      name:"ramesh",
-     age:25
+     age:25,
+     x:0,
+     y:0
      
    }
    },
@@ -34,6 +36,9 @@ export default {
    },
    sub(inc){
      this.age-=inc;
+   },
+   updateXY(){
+     console.log(event);
    }
  
  },
