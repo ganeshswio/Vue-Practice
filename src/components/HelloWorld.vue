@@ -29,6 +29,21 @@
     <span>{{name}}</span>
   </div>
 
+  <!-- computed properties -->
+ <div class="key">
+   <button v-on:click="a++">add to a</button>
+    <button v-on:click="a--">del to a</button>
+    <button v-on:click="b++">add to b</button>
+    <button v-on:click="b--">del to b</button>
+
+
+    <p> A - {{a}}</p>
+    <p> B - {{b}}</p>
+    <p>age+A ={{addToA()}}</p>
+    <p>age+B ={{addToB()}}</p>
+
+   
+ </div>
 
   </div>
  
@@ -45,7 +60,9 @@ export default {
      age:25,
      x:0,
      y:0,
-     name:"ganesh"
+     name:"ganesh",
+     a :0,
+     b :0,
      
    }
    },
@@ -67,9 +84,27 @@ export default {
    },
    logAge(){
        console.log("you entered the age");
+   },
+   addToA(){
+     console.log('add to A')
+      return this.a+this.age
+   },
+   addToB(){
+     console.log('add to B')
+      return this.b+this.age
    }
  
  },
+ computed:{
+    addToA(){
+     console.log('add to A')
+      return this.a+this.age
+   },
+   addToB(){
+     console.log('add to B')
+      return this.b+this.age
+   }
+ }
 }
  
  
