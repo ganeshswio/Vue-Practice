@@ -7,9 +7,7 @@
   <button v-on:click="sub(10)">sub 10 year </button>
    <h1>age: {{age}}</h1>
 
-<div class="canvas" v-on:mousemove="updateXY">{{x}},{{y}}
 
-</div>
 <!-- event modifiers -->
 
 <div>
@@ -17,13 +15,19 @@
 </div>
 
 <!-- keyboard events -->
-<div>
+<div class="key">
   <h1>keyboard events</h1>
   <label for="Name">Name</label>
   <input type="text" v-on:keyup.enter="logName">
   <label for="">age</label>
   <input type="text" v-on:keyup.enter="logAge">
+  
 </div>
+<!-- two way databinding  -->
+  <div class="">
+    <input type="text" > 
+    <span>{{name}}</span>
+  </div>
 
 
   </div>
@@ -40,7 +44,8 @@ export default {
      name:"ramesh",
      age:25,
      x:0,
-     y:0
+     y:0,
+     name:"ganesh"
      
    }
    },
@@ -92,5 +97,8 @@ a {
   padding: 200px 20px;
   text-align: center;
   border: 1px solid #333;
+}
+.key{
+  padding:20px 0 20px 0;
 }
 </style>
